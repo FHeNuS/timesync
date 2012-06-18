@@ -13,6 +13,8 @@
 * Javascript usage
 * 1. Add a reference to the required dependencies: 
 *   Jquery 1.5.* or later
+*   Non required, but to make it easier to parse dates on Javascript, we use the https://github.com/csnover/js-iso8601, but is up
+*   to you.
 * 2. Add a reference to the file on your page src\foranyone.timeSync.js:
 *   <script src="yourpath/4n1.timeSync.js" type="text/javascript"></script>
 * 3. Set the timeSync options if necessary. Below is the list of options with their default values: 
@@ -23,7 +25,7 @@ foranyone.timeSync.debug = false;
 
 // The url that returns the desired computer time. This request should only return the server date in a format supported by the Date.parse() method. For more details check 
 // go to http://codemadesimple.wordpress.com/2012/06/18/timesync-with-asp-net-mvc-4/
-foranyone.timeSync.url = "";
+foranyone.timeSync.url = "www.somedomain.com/urlThatWillReturnTheTime";
 
 // The http method used 
 foranyone.timeSync.httpMethod = "POST";
@@ -32,8 +34,8 @@ foranyone.timeSync.httpMethod = "POST";
 foranyone.timeSync.contentType = "application/json; charset=utf-8";
 
 // Call the foranyone.timeSync.getTimeDifference function. It will return you positive or negative difference in milliseconds. 
-// It will also set the foranyone.timeSync.timeDifference variable with the value returned (easier to reference in other scripts): 
-var timeDifference = foranyone.timeSync.getTimeDifference()
+// It will also set the foranyone.timeSync.timeDifference variable with the value returned (easier to reference in other scripts):
+var timeDifference = foranyone.timeSync.getTimeDifference();
 
 // This is true
 if (timeDifference != foranyone.timeSync.timeDifference)
